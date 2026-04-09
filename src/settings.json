@@ -1,7 +1,7 @@
 {
-  "name": "Raol Api'S",
-  "version": "v7.1.0",
-  "description": "Simple and easy to use API documentation.",
+  "name": "Ladybug APIs",
+  "version": "v1.0.0",
+  "description": "Ladybug APIs — A simple, powerful, and free-to-use REST API platform with Discord Bot Integration.",
   "maintenance": {
     "enabled": false,
     "message": ""
@@ -12,7 +12,7 @@
     "status": "Online"
   },
   "apiSettings": {
-    "creator": "RaolByte",
+    "creator": "Ladybug",
     "requireApikey": false,
     "apikey": {
       "demo": {
@@ -23,11 +23,11 @@
         "rateLimit": "unlimited",
         "enabled": true
       },
-      "Raol": {
+      "ladybug": {
         "rateLimit": "unlimited",
         "enabled": true,
         "category": "premium",
-        "name": "Raol"
+        "name": "Ladybug"
       }
     }
   },
@@ -38,10 +38,148 @@
         {
           "name": "LuminAI",
           "desc": "Advanced AI assistant powered by LuminAI for intelligent conversations",
-          "path": "/ai/luminai?text=",
-          "status": "error",
+          "path": "/ai/luminai?text=Hello",
+          "status": "ready",
+          "params": { "text": "Text message for the AI to respond to" }
+        },
+        {
+          "name": "Blackbox AI",
+          "desc": "Chat with Blackbox AI — a fast and capable AI coding and conversation assistant",
+          "path": "/ai/blackbox?text=Hello",
+          "status": "ready",
+          "params": { "text": "Text message to send to Blackbox AI" }
+        },
+        {
+          "name": "DuckDuckGo AI",
+          "desc": "Chat with DuckDuckGo free AI (GPT-4o mini) — no account required",
+          "path": "/ai/duckduckgo?text=Hello",
+          "status": "ready",
+          "params": { "text": "Text message to send to the AI" }
+        },
+        {
+          "name": "GPT4Free",
+          "desc": "Access multiple free AI models via GPT4Free proxy",
+          "path": "/ai/gpt4free?text=Hello&model=gpt-4o-mini",
+          "status": "ready",
+          "params": { "text": "Text message to send", "model": "AI model (optional, default: gpt-4o-mini)" }
+        }
+      ]
+    },
+    {
+      "name": "Downloader",
+      "items": [
+        {
+          "name": "TikTok Downloader",
+          "desc": "Download TikTok videos without watermark",
+          "path": "/downloader/tiktok?url=",
+          "status": "ready",
+          "params": { "url": "TikTok video URL" }
+        },
+        {
+          "name": "Instagram Downloader",
+          "desc": "Download Instagram reels, photos, and videos",
+          "path": "/downloader/instagram?url=",
+          "status": "ready",
+          "params": { "url": "Instagram post URL" }
+        },
+        {
+          "name": "YouTube Downloader",
+          "desc": "Download YouTube videos and extract community post data",
+          "path": "/downloader/youtube?url=",
+          "status": "ready",
+          "params": { "url": "YouTube URL" }
+        },
+        {
+          "name": "Facebook Downloader",
+          "desc": "Download Facebook videos in HD and SD quality",
+          "path": "/downloader/facebook?url=",
+          "status": "ready",
+          "params": { "url": "Facebook video URL" }
+        },
+        {
+          "name": "Spotify Downloader",
+          "desc": "Download Spotify tracks as MP3 audio files",
+          "path": "/downloader/spotify?url=",
+          "status": "ready",
+          "params": { "url": "Spotify track URL" }
+        },
+        {
+          "name": "Pinterest Downloader",
+          "desc": "Download Pinterest images and videos from any pin",
+          "path": "/downloader/pinterest?url=",
+          "status": "ready",
+          "params": { "url": "Pinterest pin URL" }
+        },
+        {
+          "name": "Twitter/X Downloader",
+          "desc": "Download Twitter/X videos and GIFs in high quality",
+          "path": "/downloader/twitter?url=",
+          "status": "ready",
+          "params": { "url": "Twitter/X post URL" }
+        },
+        {
+          "name": "Threads Downloader",
+          "desc": "Download media from Instagram Threads posts",
+          "path": "/downloader/threads?url=",
+          "status": "ready",
+          "params": { "url": "Threads post URL" }
+        },
+        {
+          "name": "CapCut Downloader",
+          "desc": "Download CapCut videos without watermark",
+          "path": "/downloader/capcut?url=",
+          "status": "ready",
+          "params": { "url": "CapCut video URL" }
+        }
+      ]
+    },
+    {
+      "name": "Tools",
+      "items": [
+        {
+          "name": "QR Code Generator",
+          "desc": "Generate a QR code image from any text or URL",
+          "path": "/tools/qrcode?text=https://example.com",
+          "status": "ready",
+          "params": { "text": "Text or URL to encode", "size": "Image size in pixels (optional, default: 300)" }
+        },
+        {
+          "name": "URL Shortener",
+          "desc": "Shorten any long URL using TinyURL",
+          "path": "/tools/shorten?url=https://example.com",
+          "status": "ready",
+          "params": { "url": "Long URL to shorten" }
+        },
+        {
+          "name": "Weather",
+          "desc": "Get current weather data for any city worldwide",
+          "path": "/tools/weather?city=London",
+          "status": "ready",
+          "params": { "city": "City name to get weather for" }
+        },
+        {
+          "name": "Translate",
+          "desc": "Translate text between any two languages using Google Translate",
+          "path": "/tools/translate?text=Hello&to=id",
+          "status": "ready",
+          "params": { "text": "Text to translate", "to": "Target language code (e.g. id, en, ja)", "from": "Source language code (optional, auto-detect)" }
+        },
+        {
+          "name": "Text to Speech",
+          "desc": "Convert text to speech audio using Google TTS",
+          "path": "/tools/tts?text=Hello world&lang=en",
+          "status": "ready",
+          "params": { "text": "Text to convert to speech", "lang": "Language code (optional, default: en)" }
+        },
+        {
+          "name": "Music Finder",
+          "desc": "Identify songs by title/artist search, YouTube URL, or direct audio file URL. Returns metadata, artwork, streaming links, and a lyrics preview.",
+          "path": "/tools/musicfinder?query=Bohemian+Rhapsody",
+          "status": "ready",
           "params": {
-            "text": "Text message for the AI to respond to"
+            "query": "Song title or artist name to search (use this OR url)",
+            "url": "YouTube URL or direct audio file URL (use this OR query)",
+            "mode": "Set to 'recognize' to force audio fingerprint recognition on a direct URL"
           }
         }
       ]
@@ -54,6 +192,38 @@
           "desc": "Get random high-quality Blue Archive character images",
           "path": "/random/ba",
           "status": "ready"
+        },
+        {
+          "name": "Waifu",
+          "desc": "Get random anime waifu images (SFW)",
+          "path": "/random/waifu",
+          "status": "ready",
+          "params": { "category": "Category: waifu, neko, shinobu, megumin, etc. (optional)" }
+        },
+        {
+          "name": "Random Dog",
+          "desc": "Get a random dog image from Dog CEO API",
+          "path": "/random/dog",
+          "status": "ready"
+        },
+        {
+          "name": "Random Cat",
+          "desc": "Get a random cat image from The Cat API",
+          "path": "/random/cat",
+          "status": "ready"
+        },
+        {
+          "name": "Random Fox",
+          "desc": "Get a random fox image",
+          "path": "/random/fox",
+          "status": "ready"
+        },
+        {
+          "name": "Anime Quote",
+          "desc": "Get a random quote from a random anime character",
+          "path": "/random/animequote",
+          "status": "ready",
+          "params": { "anime": "Filter by anime title (optional)" }
         }
       ]
     },
@@ -62,33 +232,114 @@
       "items": [
         {
           "name": "BRAT Generator",
-          "desc": "Generate BRAT-style text images with customizable colors and backgrounds",
+          "desc": "Generate BRAT-style text images with customizable backgrounds",
           "path": "/maker/brat?text=Hello World",
           "status": "ready",
-          "params": {
-            "text": "Text to be inserted into the BRAT image (required)"
-          }
+          "params": { "text": "Text to insert into the BRAT image (required)" }
         },
         {
           "name": "BRAT Video Generator",
-          "desc": "Generate animated BRAT-style text videos with customizable colors and backgrounds",
+          "desc": "Generate animated BRAT-style text videos",
           "path": "/maker/bratvid?text=Hello World",
           "status": "ready",
-          "params": {
-            "text": "Text to be inserted into the BRAT video (required)"
-          }
+          "params": { "text": "Text to insert into the BRAT video (required)" }
+        }
+      ]
+    },
+    {
+      "name": "Anime",
+      "items": [
+        {
+          "name": "Anichin Search",
+          "desc": "Search anime on Anichin",
+          "path": "/anime/anichin-search?query=naruto",
+          "status": "ready",
+          "params": { "query": "Anime title to search" }
+        },
+        {
+          "name": "Anichin Latest",
+          "desc": "Get latest anime episodes on Anichin",
+          "path": "/anime/anichin-latest",
+          "status": "ready"
+        },
+        {
+          "name": "Anichin Popular",
+          "desc": "Get popular anime on Anichin",
+          "path": "/anime/anichin-popular",
+          "status": "ready"
+        },
+        {
+          "name": "Anichin Detail",
+          "desc": "Get detailed info about an anime on Anichin",
+          "path": "/anime/anichin-detail?url=",
+          "status": "ready",
+          "params": { "url": "Anichin anime URL" }
+        },
+        {
+          "name": "Anichin Episode",
+          "desc": "Get streaming links for an anime episode on Anichin",
+          "path": "/anime/anichin-episode?url=",
+          "status": "ready",
+          "params": { "url": "Anichin episode URL" }
+        },
+        {
+          "name": "MyAnimeList Search",
+          "desc": "Search anime on MyAnimeList via Jikan API",
+          "path": "/anime/mal-search?query=naruto",
+          "status": "ready",
+          "params": { "query": "Anime title to search" }
+        },
+        {
+          "name": "Manga Search",
+          "desc": "Search manga on MyAnimeList via Jikan API",
+          "path": "/anime/manga-search?query=one+piece",
+          "status": "ready",
+          "params": { "query": "Manga title to search" }
+        },
+        {
+          "name": "Anime Top",
+          "desc": "Get the top-rated anime list from MyAnimeList",
+          "path": "/anime/top?type=tv&page=1",
+          "status": "ready",
+          "params": { "type": "Type: tv, movie, ova, special, ona (optional)", "page": "Page number (optional, default: 1)" }
+        }
+      ]
+    },
+    {
+      "name": "Search",
+      "items": [
+        {
+          "name": "Google Search",
+          "desc": "Scrape Google search results for any query",
+          "path": "/search/google?query=ladybug+apis",
+          "status": "ready",
+          "params": { "query": "Search query" }
+        },
+        {
+          "name": "Wikipedia Search",
+          "desc": "Search Wikipedia and get article summaries",
+          "path": "/search/wikipedia?query=nodejs",
+          "status": "ready",
+          "params": { "query": "Search query", "lang": "Language code (optional, default: en)" }
+        },
+        {
+          "name": "NPM Package Search",
+          "desc": "Search NPM packages and get package details",
+          "path": "/search/npm?query=express",
+          "status": "ready",
+          "params": { "query": "Package name to search" }
         }
       ]
     }
   ],
   "apiKeys": [
     {
-      "key": "Raol",
-      "name": "Raol",
+      "key": "ladybug",
+      "name": "Ladybug",
       "category": "premium",
       "ratelimit": "unlimited",
       "active": true,
-      "createdAt": "2025-10-05T04:45:58.171Z"
+      "createdAt": "2025-01-01T00:00:00.000Z"
     }
   ]
 }
