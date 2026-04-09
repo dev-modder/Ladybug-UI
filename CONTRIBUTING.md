@@ -1,9 +1,9 @@
 # Contributing
 
-Terima kasih atas minat Anda untuk berkontribusi pada proyek Raol-UI REST API! Kami menyambut kontribusi dari siapa saja untuk membantu meningkatkan kualitas dan fungsionalitas API ini.
+Terima kasih atas minat Anda untuk berkontribusi pada proyek Ladybug-UI REST API! Kami menyambut kontribusi dari siapa saja untuk membantu meningkatkan kualitas dan fungsionalitas API ini.
 
 ## Lisensi
-Proyek Raol-UI REST API ini dirilis di bawah lisensi [MIT License](LICENSE).
+Proyek Ladybug-UI REST API ini dirilis di bawah lisensi [MIT License](LICENSE).
 
 ## Sebelum Berkontribusi
 Sebelum membuat perubahan, mohon **diskusikan perubahan yang Anda inginkan** melalui issue, email, atau metode lain dengan pemilik repositori. Pastikan Anda memahami dan mengikuti **Code of Conduct** kami.
@@ -41,7 +41,7 @@ Maintainer proyek memiliki hak dan tanggung jawab untuk menghapus, mengedit, ata
 Code of Conduct ini berlaku baik di dalam ruang proyek maupun di ruang publik ketika seseorang mewakili proyek atau komunitasnya.
 
 ### Enforcement
-Kasus perilaku kasar, pelecehan, atau tidak dapat diterima lainnya dapat dilaporkan dengan menghubungi tim proyek di [rolbyte@gmail.com](mailto:raolbyte@gmail.com). Semua keluhan akan ditinjau dan diselidiki dan akan menghasilkan respons yang dianggap perlu dan sesuai dengan keadaan.
+Kasus perilaku kasar, pelecehan, atau tidak dapat diterima lainnya dapat dilaporkan dengan menghubungi tim proyek di [rolbyte@gmail.com](mailto:ladybug@example.com). Semua keluhan akan ditinjau dan diselidiki dan akan menghasilkan respons yang dianggap perlu dan sesuai dengan keadaan.
 
 ### Attribution
 Code of Conduct ini diadaptasi dari [Contributor Covenant](http://contributor-covenant.org), versi 1.4.

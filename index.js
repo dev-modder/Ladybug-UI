@@ -14,7 +14,7 @@ if (Number.parseInt(nodeVersion) < 20) {
   console.error("\x1b[31m%s\x1b[0m", "║                   ERROR: NODE.JS VERSION               ║")
   console.error("\x1b[31m%s\x1b[0m", "╚════════════════════════════════════════════════════════╝")
   console.error("\x1b[31m%s\x1b[0m", `[ERROR] You are using Node.js v${process.versions.node}`)
-  console.error("\x1b[31m%s\x1b[0m", "[ERROR] Raol-UI requires Node.js v20 or higher to run properly")
+  console.error("\x1b[31m%s\x1b[0m", "[ERROR] Ladybug-UI requires Node.js v20 or higher to run properly")
   console.error("\x1b[31m%s\x1b[0m", "[ERROR] Please update your Node.js installation and try again")
   console.error("\x1b[31m%s\x1b[0m", "[ERROR] Visit https://nodejs.org to download the latest version")
   console.error("\x1b[31m%s\x1b[0m", "╔════════════════════════════════════════════════════════╗")
@@ -58,7 +58,11 @@ app.use((req, res, next) => {
     const isApiEndpoint = req.path.startsWith('/api/') || 
                          req.path.startsWith('/ai/') || 
                          req.path.startsWith('/random/') || 
-                         req.path.startsWith('/maker/')
+                         req.path.startsWith('/maker/') ||
+                         req.path.startsWith('/tools/') ||
+                         req.path.startsWith('/downloader/') ||
+                         req.path.startsWith('/anime/') ||
+                         req.path.startsWith('/search/')
     
     if (isApiEndpoint) {
       const endpoint = req.path.replace('/api/', '').replace('/ai/', 'ai/').replace('/random/', 'random/').replace('/maker/', 'maker/')
@@ -68,6 +72,7 @@ app.use((req, res, next) => {
     if (isApiEndpoint && settings.apiSettings && settings.apiSettings.requireApikey === false) {
       return next()
     }
+
   } catch (error) {
     console.error("Error loading settings for rate limiting:", error)
   }
@@ -109,13 +114,13 @@ app.use((req, res, next) => {
     const shouldSkip = skipPaths.some((path) => req.path.startsWith(path))
 
     if (settings.maintenance && settings.maintenance.enabled && !shouldSkip) {
-      if (req.path.startsWith("/api/") || req.path.startsWith("/ai/")) {
+      if (req.path.startsWith("/api/") || req.path.startsWith("/ai/") || req.path.startsWith("/tools/") || req.path.startsWith("/downloader/") || req.path.startsWith("/anime/") || req.path.startsWith("/search/") || req.path.startsWith("/random/") || req.path.startsWith("/maker/")) {
         return res.status(503).json({
           status: false,
           error: "Service temporarily unavailable",
           message: "The API is currently under maintenance. Please try again later.",
           maintenance: true,
-          creator: settings.apiSettings?.creator || "VGX Team",
+          creator: settings.apiSettings?.creator || "Ladybug",
         })
       }
 
@@ -238,7 +243,7 @@ app.use((req, res, next) => {
     if (data && typeof data === "object") {
       const responseData = {
         status: data.status ?? true,
-        creator: settings.apiSettings.creator || "RaolByte",
+        creator: settings.apiSettings.creator || "Ladybug",
         ...data,
       }
       return originalJson.call(this, responseData)
